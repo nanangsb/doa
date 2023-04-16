@@ -26,12 +26,16 @@
 
 /* custom class */
 .body {
-    @apply px-5 pb-5 pt-10 bg-slate-100 dark:bg-slate-950 dark:text-slate-200;
+    @apply min-h-full flex flex-col px-5 pb-8 pt-10 bg-slate-100 dark:bg-slate-950 dark:text-slate-200;
+}
+
+.footer {
+    @apply mt-auto text-sm text-center text-slate-600 dark:text-slate-500 px-3 pt-8;
 }
 
 /* menu */
 .heading {
-    @apply flex items-center gap-3 -mt-2;
+    @apply flex items-center gap-3 mb-3;
 }
 
 .back {
@@ -41,21 +45,51 @@
     @apply px-5 py-8 flex flex-col bg-white rounded-3xl dark:bg-slate-900 text-center font-semibold text-slate-500 relative justify-center items-center;
 }
 .menu-active {
-    @apply px-5 py-8 flex flex-col bg-white rounded-3xl bg-gradient-to-br border border-slate-100 from-purple-600 text-white to-blue-600 dark:border-slate-950 text-center font-semibold justify-center items-center;
+    @apply px-5 py-8 flex flex-col bg-white rounded-3xl border bg-gradient-to-br text-white border-slate-100 dark:border-slate-950 text-center font-semibold justify-center items-center;
+}
+.menu-active.blue {
+    @apply from-purple-600  to-blue-600;
+}
+.menu-active.green {
+    @apply from-green-600 to-blue-600;
+}
+.menu-active.sky {
+    @apply from-cyan-500 to-blue-600;
+}
+.menu-active.orange {
+    @apply from-orange-600 to-blue-600;
 }
 .menu-soon {
     @apply text-xs py-1 px-3 rounded-t-xl absolute bottom-0 bg-slate-50 text-slate-400 dark:bg-slate-800 dark:bg-opacity-40 dark:text-slate-600;
+}
+
+.menu-other,
+.menu-other-active {
+    @apply capitalize py-4 pl-6 pr-3 rounded-2xl bg-white dark:bg-slate-900 flex items-center justify-between font-semibold;
+}
+.menu-other {
+    @apply text-slate-400 dark:text-slate-700;
+}
+.menu-other-active {
+    @apply text-blue-500;
 }
 
 /* filter */
 .filter {
     @apply -mx-5 mb-5;
 }
-.filter-item {
-    @apply py-2 px-4 rounded-full bg-slate-300 hover:bg-white dark:bg-slate-700 dark:hover:bg-slate-800;
+.filter-scroll {
+    @apply flex flex-nowrap overflow-x-auto whitespace-nowrap;
 }
-.filter-item-active {
-    @apply py-2 px-4 rounded-full bg-gradient-to-br from-purple-600 to-blue-600 text-white;
+.filter-item {
+    @apply bg-slate-300 hover:bg-white dark:bg-slate-700 dark:hover:bg-slate-800;
+}
+.filter-item,
+#filter-active {
+    @apply py-2 px-4 rounded-full;
+}
+#filter-active {
+    @apply bg-gradient-to-br from-purple-600 to-blue-600 text-white;
 }
 
 /* content item */
@@ -64,10 +98,6 @@
 }
 .card {
     @apply bg-white rounded-3xl px-5 pt-2 pb-5 dark:bg-slate-900;
-}
-
-.footer {
-    @apply mb-5 text-sm text-center text-slate-600 dark:text-slate-500 px-3;
 }
 
 /* typography */

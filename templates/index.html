@@ -1,16 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Doa doa pilihan</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="style.css?v=23.04.15">
-</head>
-<body class="body">
-    <article class="max-w-[800px] container mx-auto h-full flex-col">
+{% extends "_layout.html" %}
+
+{% block content %}
     <h1 class="mb-8">Dzikir & Doaku <span class="text-xs opacity-50 ml-1">V.01</span></h1>
     <div class="grid grid-cols-2 grid-rows-2 gap-5">
         <a href="doa-kebaikan.html" class="menu-active">
@@ -41,10 +31,4 @@
             <span class="menu-soon">Segera</span>
         </div>
     </div>
-        <footer class="footer mt-9">
-            <p>Kumpulan do'a dan dzikir ini diambil dari aplikasi Dzikir Doa Lengkap oleh <a href="https://firanda.com/" class="underline" target="_blank">Al Ustadz Firanda Andirja</a></p>
-            <p class="mt-5">Dikembangkan oleh <a href="https://www.linkedin.com/in/sidiqprihatno/" class="underline" target="_blank">Abu Maryam Assiddiq</a></p>
-        </footer>
-    </article>
-</body>
-</html>
+{% endblock %}

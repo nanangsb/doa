@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    h1 {
+        @apply text-3xl font-bold leading-5;
+    }
+    h2 {
+        @apply text-xl font-bold leading-5;
+    }
+    h3 {
+        @apply text-base font-bold leading-5;
+    }
+    @font-face {
+        font-family: "Kitab";
+        src: url(./fonts/ScheherazadeNew-Regular.woff);
+        unicode-range: U+200?, U+60C, U+618-61B, U+61F, U+621-63A, U+640-655, U+65C, U+660-66C, U+670-671, U+6CC, U+6D4, U+6D6-6DD, U+6DF-6E8, U+6EA-6ED, U+8F0-8F3, U+FD3E-FD3F, U+FDF2;
+    }
+    @font-face {
+        font-family: "Kitab";
+        src: url(./fonts/ScheherazadeNew-Regular.woff2);
+        unicode-range: U+200?, U+60C, U+618-61B, U+61F, U+621-63A, U+640-655, U+65C, U+660-66C, U+670-671, U+6CC, U+6D4, U+6D6-6DD, U+6DF-6E8, U+6EA-6ED, U+8F0-8F3, U+FD3E-FD3F, U+FDF2;
+    }
+}
+
+/* custom class */
+.body {
+    @apply px-5 pb-5 pt-10 bg-slate-100 dark:bg-slate-950 dark:text-slate-200;
+}
+
+/* menu */
+.heading {
+    @apply flex items-center gap-3 -mt-2;
+}
+
+.back {
+    @apply inline-block p-2 -ml-2;
+}
+.menu {
+    @apply px-5 py-8 flex flex-col bg-white rounded-3xl dark:bg-slate-900 text-center font-semibold text-slate-500 relative justify-center items-center;
+}
+.menu-active {
+    @apply px-5 py-8 flex flex-col bg-white rounded-3xl bg-gradient-to-br border border-slate-100 from-purple-600 text-white to-blue-600 dark:border-slate-950 text-center font-semibold justify-center items-center;
+}
+.menu-soon {
+    @apply text-xs py-1 px-3 rounded-t-xl absolute bottom-0 bg-slate-50 text-slate-400 dark:bg-slate-800 dark:bg-opacity-40 dark:text-slate-600;
+}
+
+/* filter */
+.filter {
+    @apply -mx-5 mb-5;
+}
+.filter-item {
+    @apply py-2 px-4 rounded-full bg-slate-300 hover:bg-white dark:bg-slate-700 dark:hover:bg-slate-800;
+}
+.filter-item-active {
+    @apply py-2 px-4 rounded-full bg-gradient-to-br from-purple-600 to-blue-600 text-white;
+}
+
+/* content item */
+.number {
+    @apply rounded-full w-8 h-8 px-3 bg-slate-300 flex items-center justify-center dark:bg-slate-700;
+}
+.card {
+    @apply bg-white rounded-3xl px-5 pt-2 pb-5 dark:bg-slate-900;
+}
+
+.footer {
+    @apply mb-5 text-sm text-center text-slate-600 dark:text-slate-500 px-3;
+}
+
+/* typography */
+.doa {
+   @apply font-kitab text-xl/[2] md:text-3xl/[2] mt-5 text-right;
+}
+
+.dalil {
+    @apply font-kitab text-base/[2];
+}

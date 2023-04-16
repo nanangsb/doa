@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doa doa pilihan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="style.css?v=23.04.15">
+</head>
+<body class="body">
+    <article class="max-w-[800px] container mx-auto h-full flex-col">
+        {% if child %}
+        <div class="heading">
+            <a href="./" class="back">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                    <path fill-rule="evenodd" d="M11.03 3.97a.75.75 0 010 1.06l-6.22 6.22H21a.75.75 0 010 1.5H4.81l6.22 6.22a.75.75 0 11-1.06 1.06l-7.5-7.5a.75.75 0 010-1.06l7.5-7.5a.75.75 0 011.06 0z" clip-rule="evenodd" />
+                </svg>                  
+            </a>
+            <h1>Doaku</h1>
+        </div>
+        <nav class="filter">
+            <div class="max-w-[800px] container mx-auto">
+                <div class="flex flex-nowrap overflow-x-auto whitespace-nowrap">
+                    <div class="pr-1 pl-5 lg:pl-0 py-4"><a href="doa-kebaikan.html" class="{% if kebaikan %}filter-item-active{% else%}filter-item{% endif %}">Memohon kebaikan</a></div>
+                    <div class="pr-1 py-4"><a href="doa-pengampunan.html" class="{% if pengampunan %}filter-item-active{% else%}filter-item{% endif %}">Memohon pengampunan</a></div>
+                    <div class="px-1 py-4"><a href="doa-anak.html" class="{% if anak %}filter-item-active{% else%}filter-item{% endif %}">Untuk anak/keturunan</a></div>
+                    <div class="px-1 py-4"><a href="doa-orangtua.html" class="{% if orangtua %}filter-item-active{% else%}filter-item{% endif %}">Untuk orangtua</a></div>
+                    <div class="px-1 py-4"><a href="doa-ilmu.html" class="{% if ilmu %}filter-item-active{% else%}filter-item{% endif %}">Memohon ilmu</a></div>
+                    <div class="pl-1 pr-5 py-4"><a href="doa-rizki.html" class="{% if rizki %}filter-item-active{% else%}filter-item{% endif %}">Memohon kebaikan rizki</a></div>
+                </div>
+            </div>
+        </nav>
+        {% endif %}
+        {% block content %}{% endblock %}
+        <footer class="footer mt-9">
+            {% if doa %}
+            <p class="dalil">ادْعُوا اللَّهَ وَأَنْتُمْ مُوقِنُونَ بِالإِجَابَةِ وَاعْلَمُوا أَنَّ اللَّهَ لاَ يَسْتَجِيبُ دُعَاءً مِنْ قَلْبٍ غَافِلٍ لاَهٍ</p>
+            <p class="mt-5 italic">"Berdo'alah kepada Allah dalam keadaan yakin akan dikabulkan, dan ketahuilah bahwa Allah tidak mengabulkan do'a dari hati yang lalai."</p>
+            <p class="mt-3">(HR. Tirmidzi no. 3479. Syaikh Al Albani mengatakan bahwa hadits ini hasan)</p>
+            <p class="mt-3">Sumber <a href="https://rumaysho.com/1734-allah-begitu-ekat-pada-orang-yang-berdoa.html" class="underline">Rumaysho</a></p>
+            <hr class="opacity-75 dark:opacity-10 my-8">
+            {% endif %}
+            <p>Kumpulan do'a dan dzikir ini diambil dari aplikasi Dzikir Doa Lengkap oleh <a href="https://firanda.com/" class="underline" target="_blank">Al Ustadz Firanda Andirja</a></p>
+            <p class="mt-5">Dikembangkan oleh <a href="https://www.linkedin.com/in/sidiqprihatno/" class="underline" target="_blank">Abu Maryam Assiddiq</a></p>
+        </footer>
+    </article>
+    {% if doa %}
+    <script>
+
+    </script>
+    {% endif %}
+</body>
+</html>

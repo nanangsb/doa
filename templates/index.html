@@ -1,6 +1,7 @@
 {% extends "_layout.html" %}
 
 {% set home = true %}
+{% set title = "Home" %}
 
 {% block content %}
     <h1 class="mb-8">Doa & Dzikir <span class="text-xs opacity-50 ml-1">V.01</span></h1>
@@ -35,18 +36,24 @@
     </div>
     <h3 class="mb-3 text-slate-500">Lainnya</h3>
     <div class="flex flex-col gap-2 pb-5">
+        <a href="other-mukadimah.html" class="menu-other-active">
+            Kalimat Mukadimmah
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+            </svg>              
+        </a>
         <a href="other-qunut.html" class="menu-other-active">
             Doa qunut
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
             </svg>              
         </a>
-        <a href="other-mukadimah.html" class="menu-other-active">
-            Teks Mukadimmah
+        <div class="menu-other">
+            Doa selamat
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
             </svg>              
-        </a>
+        </div>
         <div class="menu-other">
             Doa untuk orang sakit
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -55,12 +62,6 @@
         </div>
         <div class="menu-other">
             Rukun shalat jenazah
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-            </svg>              
-        </div>
-        <div class="menu-other">
-            Catatan ilmu tajwid
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
             </svg>              

@@ -1,11 +1,29 @@
-            <nav class="bg-gradient-to-t from-slate-200 from-60% to-transparent sticky bottom-0 -mx-5 mt-5 pt-10 hidden">
-                <div class="max-w-lg container mx-auto">
-                    <div class="px-5 flex flex-nowrap overflow-x-auto whitespace-nowrap">
-                        <div class="px-1 py-4"><a href="#" class="py-1 px-3 rounded-full bg-blue-500 text-white hover:bg-white">Memohon kebaikan</a></div>
-                        <div class="px-1 py-4"><a href="#" class="py-1 px-3 rounded-full bg-slate-300 hover:bg-white">Untuk anak/keturunan</a></div>
-                        <div class="px-1 py-4"><a href="#" class="py-1 px-3 rounded-full bg-slate-300 hover:bg-white">Untuk orangtua</a></div>
-                        <div class="px-1 py-4"><a href="#" class="py-1 px-3 rounded-full bg-slate-300 hover:bg-white">Memohon ilmu</a></div>
-                        <div class="px-1 py-4"><a href="#" class="py-1 px-3 rounded-full bg-slate-300 hover:bg-white">Memohon kebaikan rizki</a></div>
-                    </div>
-                </div>
-            </nav>
+<nav class="sticky bottom-0 bg-gradient-to-t dark:from-slate-950 from-slate-100 py-5">
+    <div class="max-w-lg container mx-auto">
+        <div class="flex justify-center p-1 gap-3">
+            <div class="rounded-full dark:bg-white bg-black bg-opacity-5 dark:bg-opacity-5 backdrop-blur-xl flex items-center relative">
+                <button class="p-1 relative z-10" onclick="changeFontSize('doa-x1')">
+                    <span class="change-size-item">
+                        <small class="mr-0.5">x</small>1
+                    </span>
+                </button>
+                <button class="p-1 relative z-10" onclick="changeFontSize('doa-x2')">
+                    <span class="change-size-item">
+                        <small class="mr-0.5">x</small>2
+                    </span>
+                </button>
+                <button class="p-1 relative z-10" onclick="changeFontSize('doa-x3')">
+                    <span class="change-size-item">
+                        <small class="mr-0.5">x</small>3
+                    </span>
+                </button>
+                <span class="change-size-state"></span>
+            </div>
+            <button class="w-12 h-12 rounded-full bg-black dark:bg-white bg-opacity-5 dark:bg-opacity-5 backdrop-blur-xl flex items-center justify-center" onclick="backTop()">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 19.5v-15m0 0l-6.75 6.75M12 4.5l6.75 6.75" />
+                </svg>
+            </button>
+        </div>
+    </div>
+</nav>

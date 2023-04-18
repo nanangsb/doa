@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="style.css?v=23.04.17">
 </head>
-<body class="body">
+<body id="body">
     <article class="max-w-[800px] container mx-auto flex-col">
         {% if child %}
         <div class="flex items-center gap-3 -mt-3">
@@ -49,7 +49,11 @@
         </nav>
         {% endif %}
         {% block content %}{% endblock %}
+
     </article>
+    {% if not home %}
+    {% include "_bottom-nav.html" %}
+    {% endif %}
     <footer class="footer">
         {% if doa %}
         <p class="dalil">ادْعُوا اللَّهَ وَأَنْتُمْ مُوقِنُونَ بِالإِجَابَةِ وَاعْلَمُوا أَنَّ اللَّهَ لاَ يَسْتَجِيبُ دُعَاءً مِنْ قَلْبٍ غَافِلٍ لاَهٍ</p>
@@ -63,8 +67,8 @@
         {% endif %}
         <p class="mt-5">&copy; 2023 <a href="https://sidiqprihatno.github.io/" class="underline" target="_blank">Abu Maryam Assiddiq</a></p>
     </footer>
-    {% if doa %}
     <script>
+        {% if doa %}
         var screen = document.documentElement.clientWidth;
         const filterScroll = document.getElementById('filter-area');
         const filter = document.getElementById('filter-active');
@@ -78,7 +82,24 @@
 
         filterScroll.scrollLeft = position;
         
+        {% endif %}
+
+        function changeFontSize(size) {
+           let doa = document.getElementById('body');
+           
+           if (size != '') {
+               doa.className = '';
+               doa.classList.add(size);
+            } else {
+               doa.className = '';
+           }
+        }
+
+        function backTop() {
+            document.body.scrollTop = 0; // For Safari
+            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+        }
+        
     </script>
-    {% endif %}
 </body>
 </html>

@@ -9,9 +9,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="style.css?v=23.04.17">
 </head>
-<body class="body">
+<body id="body">
     <article class="max-w-[800px] container mx-auto flex-col">
-    <h1 class="mb-8">Doa & Dzikir <span class="text-xs opacity-50 ml-1">V.01</span></h1>
+    <h1 class="mb-8 text-3xl">Doa & Dzikir <span class="text-xs opacity-50 ml-1">V.01</span></h1>
     <div class="grid grid-cols-2 grid-rows-2 gap-5 mb-8">
         <a href="doa-kebaikan.html" class="menu-active blue">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-12 h-12 mx-auto mb-3">
@@ -74,10 +74,30 @@
             </svg>              
         </div>
     </div>
+
     </article>
     <footer class="footer">
         <p>Kumpulan teks do'a dan dzikir mayoritas diambil dari aplikasi BekalIslam oleh <a href="https://bekalislam.firanda.com/" class="underline" target="_blank">Al Ustadz Firanda Andirja</a></p>
         <p class="mt-5">&copy; 2023 <a href="https://sidiqprihatno.github.io/" class="underline" target="_blank">Abu Maryam Assiddiq</a></p>
     </footer>
+    <script>
+
+        function changeFontSize(size) {
+           let doa = document.getElementById('body');
+           
+           if (size != '') {
+               doa.className = '';
+               doa.classList.add(size);
+            } else {
+               doa.className = '';
+           }
+        }
+
+        function backTop() {
+            document.body.scrollTop = 0; // For Safari
+            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+        }
+        
+    </script>
 </body>
 </html>

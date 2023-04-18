@@ -596,6 +596,10 @@ h3 {
   border-width: 0;
 }
 
+.relative {
+  position: relative;
+}
+
 .sticky {
   position: sticky;
 }
@@ -604,9 +608,8 @@ h3 {
   bottom: 0px;
 }
 
-.-mx-5 {
-  margin-left: -1.25rem;
-  margin-right: -1.25rem;
+.z-10 {
+  z-index: 10;
 }
 
 .mx-auto {
@@ -633,6 +636,14 @@ h3 {
 
 .ml-1 {
   margin-left: 0.25rem;
+}
+
+.mr-0 {
+  margin-right: 0px;
+}
+
+.mr-0\.5 {
+  margin-right: 0.125rem;
 }
 
 .mt-2 {
@@ -665,10 +676,6 @@ h3 {
 
 .grid {
   display: grid;
-}
-
-.hidden {
-  display: none;
 }
 
 .h-12 {
@@ -711,12 +718,12 @@ h3 {
   flex-direction: column;
 }
 
-.flex-nowrap {
-  flex-wrap: nowrap;
-}
-
 .items-center {
   align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
 }
 
 .gap-2 {
@@ -731,16 +738,8 @@ h3 {
   gap: 1.25rem;
 }
 
-.overflow-x-auto {
-  overflow-x: auto;
-}
-
 .scroll-smooth {
   scroll-behavior: smooth;
-}
-
-.whitespace-nowrap {
-  white-space: nowrap;
 }
 
 .rounded-3xl {
@@ -760,35 +759,29 @@ h3 {
   border-color: rgb(226 232 240 / var(--tw-border-opacity));
 }
 
-.bg-blue-500 {
+.bg-black {
   --tw-bg-opacity: 1;
-  background-color: rgb(59 130 246 / var(--tw-bg-opacity));
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
 
-.bg-slate-300 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(203 213 225 / var(--tw-bg-opacity));
+.bg-opacity-5 {
+  --tw-bg-opacity: 0.05;
 }
 
 .bg-gradient-to-t {
   background-image: linear-gradient(to top, var(--tw-gradient-stops));
 }
 
-.from-slate-200 {
-  --tw-gradient-from: #e2e8f0 var(--tw-gradient-from-position);
+.from-slate-100 {
+  --tw-gradient-from: #f1f5f9 var(--tw-gradient-from-position);
   --tw-gradient-from-position:  ;
-  --tw-gradient-to: rgb(226 232 240 / 0)  var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(241 245 249 / 0)  var(--tw-gradient-from-position);
   --tw-gradient-to-position:  ;
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
-.from-60\% {
-  --tw-gradient-from-position: 60%;
-}
-
-.to-transparent {
-  --tw-gradient-to: transparent var(--tw-gradient-to-position);
-  --tw-gradient-to-position:  ;
+.p-1 {
+  padding: 0.25rem;
 }
 
 .px-1 {
@@ -796,24 +789,19 @@ h3 {
   padding-right: 0.25rem;
 }
 
-.px-3 {
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
-}
-
 .px-5 {
   padding-left: 1.25rem;
   padding-right: 1.25rem;
 }
 
-.py-1 {
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
-}
-
 .py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
+}
+
+.py-5 {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
 }
 
 .pb-5 {
@@ -836,8 +824,9 @@ h3 {
   padding-right: 1.25rem;
 }
 
-.pt-10 {
-  padding-top: 2.5rem;
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
 }
 
 .text-xs {
@@ -863,11 +852,6 @@ h3 {
   color: rgb(100 116 139 / var(--tw-text-opacity));
 }
 
-.text-white {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
 .underline {
   text-decoration-line: underline;
 }
@@ -888,12 +872,19 @@ h3 {
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
+.backdrop-blur-xl {
+  --tw-backdrop-blur: blur(24px);
+  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+          backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+}
+
 /* custom class */
 
-.body {
+#body {
   display: flex;
   min-height: 100%;
   flex-direction: column;
+  scroll-behavior: smooth;
   --tw-bg-opacity: 1;
   background-color: rgb(241 245 249 / var(--tw-bg-opacity));
   padding-left: 1.25rem;
@@ -903,7 +894,7 @@ h3 {
 }
 
 @media (prefers-color-scheme: dark) {
-  .body {
+  #body {
     --tw-bg-opacity: 1;
     background-color: rgb(2 6 23 / var(--tw-bg-opacity));
     --tw-text-opacity: 1;
@@ -1210,21 +1201,99 @@ h3 {
   }
 }
 
+#body.doa-x2 .doa {
+  font-size: 1.5rem;
+  line-height: 2;
+}
+
+@media (min-width: 768px) {
+  #body.doa-x2 .doa {
+    font-size: 2.25rem;
+    line-height: 2;
+  }
+}
+
+#body.doa-x3 .doa {
+  font-size: 1.875rem;
+  line-height: 2;
+}
+
+@media (min-width: 768px) {
+  #body.doa-x3 .doa {
+    font-size: 3rem;
+    line-height: 2;
+  }
+}
+
 .dalil {
   font-family: Kitab;
   font-size: 1rem;
   line-height: 2;
 }
 
-.hover\:bg-white:hover {
+/* Navbar */
+
+.change-size-item {
+  position: relative;
+  display: flex;
+  height: 2.5rem;
+  width: 2.5rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+}
+
+.change-size-state {
+  position: absolute;
+  left: 0.25rem;
+  top: 0.25rem;
+  z-index: 0;
+  height: 2.5rem;
+  width: 2.5rem;
+  border-radius: 9999px;
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+@media (prefers-color-scheme: dark) {
+  .change-size-state {
+    --tw-bg-opacity: 1;
+    background-color: rgb(2 6 23 / var(--tw-bg-opacity));
+  }
+}
+
+#body.doa-x2 .change-size-state {
+  left: 52px;
+}
+
+#body.doa-x3 .change-size-state {
+  left: 100px;
 }
 
 @media (prefers-color-scheme: dark) {
   .dark\:border-slate-800 {
     --tw-border-opacity: 1;
     border-color: rgb(30 41 59 / var(--tw-border-opacity));
+  }
+
+  .dark\:bg-white {
+    --tw-bg-opacity: 1;
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  }
+
+  .dark\:bg-opacity-5 {
+    --tw-bg-opacity: 0.05;
+  }
+
+  .dark\:from-slate-950 {
+    --tw-gradient-from: #020617 var(--tw-gradient-from-position);
+    --tw-gradient-from-position:  ;
+    --tw-gradient-to: rgb(2 6 23 / 0)  var(--tw-gradient-from-position);
+    --tw-gradient-to-position:  ;
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
   }
 
   .dark\:opacity-10 {

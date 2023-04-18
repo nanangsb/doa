@@ -25,8 +25,8 @@
 }
 
 /* custom class */
-.body {
-    @apply min-h-full flex flex-col px-5 py-8 bg-slate-100 dark:bg-slate-950 dark:text-slate-200;
+#body {
+    @apply min-h-full flex flex-col px-5 py-8 bg-slate-100 dark:bg-slate-950 dark:text-slate-200 scroll-smooth;
 }
 
 .footer {
@@ -108,7 +108,27 @@
 .doa {
    @apply font-kitab text-xl/[2] md:text-3xl/[2] mt-5 text-right;
 }
+#body.doa-x2 .doa {
+    @apply text-2xl/[2] md:text-4xl/[2];
+}
+#body.doa-x3 .doa {
+    @apply text-3xl/[2] md:text-5xl/[2];
+}
 
 .dalil {
     @apply font-kitab text-base/[2];
+}
+
+/* Navbar */
+.change-size-item {
+    @apply w-10 h-10 flex items-center justify-center rounded-full relative;
+}
+.change-size-state {
+    @apply w-10 h-10 absolute left-1 top-1 bg-white dark:bg-slate-950 rounded-full z-0 transition-all;
+}
+#body.doa-x2 .change-size-state {
+    @apply left-[52px];
+}
+#body.doa-x3 .change-size-state {
+    @apply left-[100px];
 }

@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en" class="h-full">
+<html lang="en" class="h-full scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, height=device-height, minimum-scale=1.0, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Doa & Dzikir - {{ title }}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="style.css?v=23.04.17">
+    <link rel="stylesheet" href="style.css?v=23.04.21">
 </head>
 <body id="body">
     <article class="max-w-[800px] container mx-auto flex-col">
@@ -54,7 +54,7 @@
     {% if not home %}
     {% include "_bottom-nav.html" %}
     {% endif %}
-    <footer class="footer">
+    <footer class="footer {% if home %}mt-auto{% endif%}">
         {% if doa %}
         <p class="dalil">ادْعُوا اللَّهَ وَأَنْتُمْ مُوقِنُونَ بِالإِجَابَةِ وَاعْلَمُوا أَنَّ اللَّهَ لاَ يَسْتَجِيبُ دُعَاءً مِنْ قَلْبٍ غَافِلٍ لاَهٍ</p>
         <p class="mt-5 italic">"Berdo'alah kepada Allah dalam keadaan yakin akan dikabulkan, dan ketahuilah bahwa Allah tidak mengabulkan do'a dari hati yang lalai."</p>
@@ -84,22 +84,80 @@
         
         {% endif %}
 
+        {% if sholat or dzikir %}
+
+        let dzikir = document.getElementsByClassName('clickable button');
+        let counter = 0;
+        
+        document.addEventListener('click', function(event){
+            let parent = event.target.parentElement;
+            let dzikirMax = parent.dataset.dzikir;
+            let dzikirCount = parent.querySelector('.card-count');
+            let dzikirCounter = parseInt(dzikirCount.innerHTML);
+
+            console.log(dzikirCount);
+
+            parent.classList.add('counted');
+            
+            if (dzikirCounter < dzikirMax) {
+                dzikirCounter++;
+                dzikirCount.innerHTML = dzikirCounter;
+                parent.classList.add('clicked');
+                
+                setTimeout(function() {
+                    parent.classList.remove('clicked');
+                }, 100)
+            } 
+            
+            if (dzikirCounter == dzikirMax) {
+                parent.classList.add('completed');
+                parent.classList.remove('clickable');
+                dzikirCount.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>'
+            }   
+
+        })
+
+        {% endif %}
+
+        {% if not home %}
+        // prevent unwanted space when scrolling down on android
+        var repositionKey = false;
+
+        function onResize() {
+        repositionKey = !repositionKey;
+        document.getElementById("hiddenDiv").innerHTML = repositionKey;
+        }
+
+        addEventListener("resize", onResize);
+
+        // change arabic font size
+        var doa = document.getElementById('body');
+
         function changeFontSize(size) {
-           let doa = document.getElementById('body');
            
            if (size != '') {
                doa.className = '';
                doa.classList.add(size);
             } else {
-               doa.className = '';
-           }
+                doa.className = '';
+            }
+
+            localStorage.setItem("fontSize", size);
         }
 
-        function backTop() {
-            document.body.scrollTop = 0; // For Safari
-            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+        var fontSize = localStorage.getItem("fontSize");
+        if (fontSize != '') {
+            doa.classList.add(fontSize);
         }
-        
+
+        // back to top
+        function backTop() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        };
+
+        {% endif %}
+
     </script>
 </body>
 </html>

@@ -22,10 +22,12 @@
             <h1>{{title}}</h1>
         </div>
         {% endif %}
-        {% if doa %}
+
+        {% if doa or other_sakit %}
         <nav class="filter">
             <div class="max-w-[800px] container mx-auto">
                 <div class="filter-scroll scroll-smooth" id="filter-area">
+                    {% if doa %}
                     <div class="pr-1 pl-5 lg:pl-0 py-4">
                         <a href="doa-kebaikan.html" {% if kebaikan %} id="filter-active" {% else %} class="filter-item" {% endif %}>Memohon kebaikan</a>
                     </div>
@@ -44,11 +46,30 @@
                     <div class="pl-1 pr-5 py-4">
                         <a href="doa-rizki.html" {% if rizki %} id="filter-active" {% else %} class="filter-item" {% endif %}>Memohon kebaikan rizki</a>
                     </div>
+                    {% endif %}
+                    {% if other_sakit %}
+                    <div class="pr-1 pl-5 lg:pl-0 py-4">
+                        <a href="other-sakit-sendiri.html" {% if sendiri %} id="filter-active" {% else %} class="filter-item" {% endif %}>Untuk Sendiri</a>
+                    </div>
+                    <div class="pl-1 pr-5 py-4">
+                        <a href="other-sakit-oranglain.html" {% if oranglain %} id="filter-active" {% else %} class="filter-item" {% endif %}>Untuk Oranglain</a>
+                    </div>
+                    {% endif %}
                 </div>
             </div>
         </nav>
         {% endif %}
+
         {% block content %}{% endblock %}
+
+        {% if sholat or dzikir %}
+        <div class="mt-10 text-slate-600 dark:text-slate-500">
+            <h3>Hukum Memakai Tasbih Untuk Berdzikir</h3>
+            <p class="mt-5 italic">"Diperbolehkan menggunakan tasbih, akan tetapi yang lebih utama adalah bertasbih dengan jari-jari tangan, karena Nabi ﷺ bersabda "Hitunglah dengan jar-jari, karena ia nanti bisa berbicara".</p>
+            <p class="mt-5 italic">Dan karena membaca tasbih bisa jadi menimbulkan riya', karena sering bertasbih dengan tasbih biasanya hatinya tidak hadir, melihat kanan kiri, maka jari-jari adalah lebih utama. (Fatwa al-'Utsaimin)</p>
+            <p class="mt-5"><a href="https://bekalislam.firanda.com/5421-hukum-memakai-tasbih-untuk-berdzikir.html" class="underline">https://bekalislam.firanda.com/5421-hukum-memakai-tasbih-untuk-berdzikir.html</a></p>
+        </div>
+        {% endif %}
 
     </article>
     {% if not home %}

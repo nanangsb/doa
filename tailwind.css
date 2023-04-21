@@ -58,7 +58,7 @@
     @apply from-green-500 to-blue-500;
 }
 .menu-active.sky {
-    @apply from-cyan-500 to-blue-500;
+    @apply from-cyan-400 to-blue-500;
 }
 .menu-active.orange {
     @apply from-orange-500 to-blue-500;

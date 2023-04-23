@@ -8,7 +8,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="style.css?v=23.04.21">
-    
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#a855f7">
+    <meta name="msapplication-TileColor" content="#a855f7">
 </head>
 <body id="body">
     <article class="max-w-[800px] container mx-auto flex-col">
@@ -124,6 +129,18 @@
         <p class="mt-5">&copy; 2023 <a href="https://sidiqprihatno.github.io/" class="underline" target="_blank">Abu Maryam Assiddiq</a></p>
     </footer>
     <script>
+        window.addEventListener("beforeinstallprompt", (beforeInstallPromptEvent) => {
+            beforeInstallPromptEvent.preventDefault(); // Prevents immediate prompt display
+
+            // Shows prompt after a user clicks an "install" button
+            installButton.addEventListener("click", (mouseEvent) => {
+                // you should not use the MouseEvent here, obviously
+                beforeInstallPromptEvent.prompt();
+            });
+
+            installButton.hidden = false; // Make button operable
+        });
+
         var screen = document.documentElement.clientWidth;
         const filterScroll = document.getElementById('filter-area');
         const filter = document.getElementById('filter-active');

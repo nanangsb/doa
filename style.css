@@ -699,6 +699,10 @@ h3 {
   display: grid;
 }
 
+.hidden {
+  display: none;
+}
+
 .h-12 {
   height: 3rem;
 }

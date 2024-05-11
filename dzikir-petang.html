@@ -14,6 +14,8 @@
     <link rel="manifest" href="/site.webmanifest">
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#a855f7">
     <meta name="msapplication-TileColor" content="#a855f7">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/greghub/green-audio-player/dist/css/green-audio-player.min.css">
+
 </head>
 <body id="body">
     <article class="max-w-[800px] container mx-auto flex-col">
@@ -37,6 +39,11 @@
 <div class="card clickable mt-5" data-dzikir="3">
     <button class="card-click-area"></button>
     <div class="card-count">0</div>
+    <div class="ready-player-1">
+        <audio crossorigin preload="none">
+            <source src="audio/example-1.mp3" type="audio/mpeg">
+        </audio>
+    </div>
     <p class="doa">رَضِيْتُ بِاللهِ رَبًّا، وَبِاْلإِسْلاَمِ دِيْنًا، وَبِمُحَمَّدٍ صَلَّى اللهُ عَلَيْهِ وَسَلَّمَ نَبِيًّا</p>
     <p class="mt-5 text-slate-500">Dibaca 3x</p>
     <p class="mt-5">"Aku ridho/senang Allah sebagai Rabb, Islam sebagai agama, dan Muhammad sebagai nabi (yang diutus oleh Allah)."</p>
@@ -186,6 +193,7 @@
         <p>Kumpulan teks do'a dan dzikir mayoritas diambil dari aplikasi BekalIslam oleh <a href="https://bekalislam.firanda.com/" class="underline" target="_blank">Al Ustadz Firanda Andirja</a></p>
         <p class="mt-5">&copy; 2023 <a href="https://sidiqprihatno.github.io/" class="underline" target="_blank">Abu Maryam Assiddiq</a></p>
     </footer>
+    <script src="https://cdn.jsdelivr.net/gh/greghub/green-audio-player/dist/js/green-audio-player.min.js"></script>
     <script>
         window.addEventListener("beforeinstallprompt", (beforeInstallPromptEvent) => {
             beforeInstallPromptEvent.preventDefault(); // Prevents immediate prompt display

@@ -1427,9 +1427,21 @@ h3 {
 }
 
 .dalil {
+  text-align: center;
   font-family: Kitab;
   font-size: 1rem;
   line-height: 2;
+  --tw-text-opacity: 1;
+  color: rgb(100 116 139 / var(--tw-text-opacity));
+}
+
+.latin {
+  font-family: Kitab;
+  font-size: 1.25rem;
+  line-height: 2;
+  font-style: italic;
+  --tw-text-opacity: 1;
+  color: rgb(100 116 139 / var(--tw-text-opacity));
 }
 
 /* Navbar */

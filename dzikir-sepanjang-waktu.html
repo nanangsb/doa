@@ -34,12 +34,29 @@
 		<h3>Judul</h3>
 	</div>
 	<div class="card">
-		<p class="doa">رArabic</p>
+		<p class="doa">Arabic</p>
+		<p class="latin">Latin</p>
 		<p class="mt-5">Arti</p>
 		<p class="dalil">Dalil</p>
 	</div>
 </section>
+<div class="card clickable mt-5" data-dzikir="3">
+    <button class="card-click-area"></button>
+    <div class="card-count">0</div>
+    <p class="doa">Arabic</p>
+	<p class="latin">Latin</p>
+    <p class="mt-5 text-slate-500">Dibaca 3x</p>
+    <p class="mt-5">"Arti"</p>
+	<p class="dalil">Dalil</p>
+    <span class="card-hint">Klick/Tap untuk menghitung dzikir</span>
+</div>
 
+        <div class="mt-10 text-slate-600 dark:text-slate-500">
+            <h3>Hukum Memakai Tasbih Untuk Berdzikir</h3>
+            <p class="mt-5 italic">"Diperbolehkan menggunakan tasbih, akan tetapi yang lebih utama adalah bertasbih dengan jari-jari tangan, karena Nabi ﷺ bersabda "Hitunglah dengan jar-jari, karena ia nanti bisa berbicara".</p>
+            <p class="mt-5 italic">Dan karena membaca tasbih bisa jadi menimbulkan riya', karena sering bertasbih dengan tasbih biasanya hatinya tidak hadir, melihat kanan kiri, maka jari-jari adalah lebih utama. (Fatwa al-'Utsaimin)</p>
+            <p class="mt-5"><a href="https://bekalislam.firanda.com/5421-hukum-memakai-tasbih-untuk-berdzikir.html" class="underline">https://bekalislam.firanda.com/5421-hukum-memakai-tasbih-untuk-berdzikir.html</a></p>
+        </div>
 
     </article>
 <nav id="bottom-navbar" class="sticky bottom-0 bg-gradient-to-t dark:from-slate-950 from-slate-100 pb-5 pt-8 mt-auto z-40 -mx-5">
@@ -93,6 +110,38 @@
             installButton.hidden = false; // Make button operable
         });
 
+
+
+        let dzikir = document.getElementsByClassName('clickable button');
+        let counter = 0;
+        
+        document.addEventListener('click', function(event){
+            let parent = event.target.parentElement;
+            let dzikirMax = parent.dataset.dzikir;
+            let dzikirCount = parent.querySelector('.card-count');
+            let dzikirCounter = parseInt(dzikirCount.innerHTML);
+
+            console.log(dzikirCount);
+
+            parent.classList.add('counted');
+            
+            if (dzikirCounter < dzikirMax) {
+                dzikirCounter++;
+                dzikirCount.innerHTML = dzikirCounter;
+                parent.classList.add('clicked');
+                
+                setTimeout(function() {
+                    parent.classList.remove('clicked');
+                }, 100)
+            } 
+            
+            if (dzikirCounter == dzikirMax) {
+                parent.classList.add('completed');
+                parent.classList.remove('clickable');
+                dzikirCount.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>'
+            }   
+
+        })
 
 
         // prevent unwanted space when scrolling down on android

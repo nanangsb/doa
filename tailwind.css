@@ -149,9 +149,11 @@
 }
 
 .dalil {
-    @apply font-kitab text-base/[2];
+    @apply font-kitab text-center text-slate-500 text-base/[2];
 }
-
+.latin {
+    @apply font-kitab text-slate-500 italic text-xl/[2];
+}
 /* Navbar */
 .change-size-item {
     @apply w-10 h-10 flex items-center justify-center rounded-full relative;
